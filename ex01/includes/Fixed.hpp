@@ -6,7 +6,7 @@
 /*   By: fpetit <fpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 00:19:26 by fpetit            #+#    #+#             */
-/*   Updated: 2025/05/03 20:11:43 by fpetit           ###   ########.fr       */
+/*   Updated: 2025/05/04 16:13:53 by fpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 
 # include <string>
 # include <iostream>
+# include <cmath>
 
-# define NC   "\033[0m"
+# define NC      "\033[0m"
 # define BLACK   "\033[30m"
 # define RED     "\033[31m"
 # define GREEN   "\033[32m"
@@ -38,14 +39,18 @@ private:
     
 public:
     Fixed( void );
+    Fixed( const int n );
+    Fixed( const float n );
     Fixed( const Fixed& obj );
     Fixed& operator=( const Fixed& obj );
     ~Fixed ( void );
 
     int     getRawBits( void ) const;
     void    setRawBits( int const raw );
-
+    float   toFloat( void ) const;
+    int     toInt( void ) const;
 };
 
+std::ostream& operator<<( std::ostream& os, const Fixed& obj );
 
 #endif
