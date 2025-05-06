@@ -6,7 +6,7 @@
 /*   By: fpetit <fpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 16:47:43 by fpetit            #+#    #+#             */
-/*   Updated: 2025/05/05 16:55:51 by fpetit           ###   ########.fr       */
+/*   Updated: 2025/05/06 15:43:09 by fpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,27 @@
 # define POINT_HPP
 
 #include <string>
+#include "Fixed.hpp"
 
 class Point
 {
 private:
-	int	_x;
-	int	_y;
+	Fixed	_x;
+	Fixed	_y;
 
 public:
 
 	Point( void );
-	Point( int x, int y );
-	Point( Point& p );
+	Point( const float x, const float y );
+	Point( const Point& p );
 	Point& operator= (const Point& p );
 	~Point( void );
-	int	getX( void );
-	int	getY( void );
+	Fixed	getX( void );
+	Fixed	getY( void );
 
-}
+};
+
+bool	bsp(Point const a, Point const b, Point const c, Point const point);
+void	check(Point& a, Point& b, Point& c, Point& p);
 
 #endif

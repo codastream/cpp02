@@ -6,7 +6,7 @@
 /*   By: fpetit <fpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 21:36:35 by fpetit            #+#    #+#             */
-/*   Updated: 2025/05/05 16:44:36 by fpetit           ###   ########.fr       */
+/*   Updated: 2025/05/06 15:49:45 by fpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,14 +84,14 @@ bool	Fixed::operator!=( const Fixed& other ) const
 	return (_value != other.getRawBits() );
 }
 
-Fixed	Fixed::operator+( const Fixed& other ) const
+Fixed	Fixed::operator+( const Fixed other ) const
 {
 	Fixed result;
 	result.setRawBits(_value + other.getRawBits());
 	return (result);
 }
 
-Fixed	Fixed::operator-( const Fixed& other ) const
+Fixed	Fixed::operator-( const Fixed other ) const
 {
 	Fixed result;
 	result.setRawBits(_value - other.getRawBits());
@@ -99,7 +99,7 @@ Fixed	Fixed::operator-( const Fixed& other ) const
 
 }
 
-Fixed	Fixed::operator*( const Fixed& other ) const
+Fixed	Fixed::operator*( const Fixed other ) const
 {
 	Fixed result;
 	double temp = (double) this->toFloat() * (double) other.toFloat();
@@ -107,7 +107,7 @@ Fixed	Fixed::operator*( const Fixed& other ) const
 	return (result);
 }
 
-Fixed	Fixed::operator/( const Fixed& other ) const
+Fixed	Fixed::operator/( const Fixed other ) const
 {
 	if (other.getRawBits() == 0)
 		return (0);

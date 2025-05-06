@@ -1,4 +1,4 @@
-NAME		:=	ex02
+NAME		:=	ex03
 
 #==============================COMPIL===========================#
 
@@ -59,6 +59,8 @@ BUILD_DIR		:=	.build
 
 SRCS_FILES:=	main.cpp\
 				Fixed.cpp\
+				Point.cpp\
+				bsp.cpp\
 
 SRCS:=			$(addprefix $(SRC_DIR)/, $(SRCS_FILES))
 
