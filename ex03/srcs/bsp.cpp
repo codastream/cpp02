@@ -6,12 +6,12 @@
 /*   By: fpetit <fpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 16:47:02 by fpetit            #+#    #+#             */
-/*   Updated: 2025/05/06 15:51:53 by fpetit           ###   ########.fr       */
+/*   Updated: 2025/07/14 23:06:44 by fpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
-#include "Fixed.hpp"
+#include "Point.class.hpp"
+#include "Fixed.class.hpp"
 
 /*
  * calculates vector product of pa (A - p) and pb (B - p)

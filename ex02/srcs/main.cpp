@@ -6,18 +6,18 @@
 /*   By: fpetit <fpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 13:21:53 by fpetit            #+#    #+#             */
-/*   Updated: 2025/05/05 16:44:42 by fpetit           ###   ########.fr       */
+/*   Updated: 2025/07/14 23:14:25 by fpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Fixed.hpp"
+#include "Fixed.class.hpp"
 
-void	testComparison ( void )
+void	testComparison (void)
 {
-	Fixed const a (12.34f );
-	Fixed const b ( -10 );
-	Fixed const c ( b );
-	Fixed const zero ( 0 );
+	const Fixed a (12.34f);
+	const Fixed b (-10);
+	const Fixed c (b);
+	const Fixed zero (0);
 
 	putnlgreen("=== Comparison [a = 12.34, b = -10, c = b]");
 	std::cout << "a < b\t=> " << (a < b ? "true" : "false") << std::endl;
@@ -28,11 +28,11 @@ void	testComparison ( void )
 	std::cout << "b != c\t=> " << (b != c ? "true" : "false") << std::endl;
 }
 
-void	testArithmetic ( void )
+void	testArithmetic (void)
 {
-	Fixed a (12.34f );
-	Fixed b ( -10 );
-	Fixed zero ( 0 );
+	const Fixed a(12.34f);
+	const Fixed b(-10);
+	const Fixed zero (0);
 
 	putnlgreen("=== Arithmetic [a = 12.34 b = -10]");
 	std::cout << "a + b\t=> " << (a + b).toFloat() << std::endl;
@@ -42,26 +42,26 @@ void	testArithmetic ( void )
 	std::cout << "a / zero => " << (a / zero).toFloat() << std::endl;
 }
 
-void	testIncrement ( void )
+void	testIncrement (void)
 {
-	Fixed a (12.34f );
-	Fixed b (12.34f );
-	Fixed c (12.34f );
-	Fixed d (12.34f );
+	Fixed a(12.34f);
+	Fixed b(12.34f);
+	Fixed c(12.34f);
+	Fixed d(12.34f);
 
-	putnlgreen("=== Increment [a = 12.34]");
+	putnlgreen("=== Increment [a = b = c = d = 12.34]");
 	std::cout << "a++ =>" << (a++).toFloat() << std::endl;
 	std::cout << "b-- =>" << (b--).toFloat() << std::endl;
 	std::cout << "++c =>" << (++c).toFloat() << std::endl;
 	std::cout << "--d =>" << (--d).toFloat() << std::endl;
 }
 
-void	testMinMax( void )
+void	testMinMax(void)
 {
-	Fixed const a (12.34f );
-	Fixed const b ( -10 );
-	Fixed	c(12.34f);
-	Fixed	d(-10);
+	const Fixed a(12.34f );
+	const Fixed b(-10);
+	Fixed c(12.34f);
+	Fixed d(-10);
 
 	putnlgreen("=== Min and Max [a = 12.34, b = -10]");
 	std::cout << "min (a,b) const\t" << Fixed::min(a, b).toFloat() << std::endl;
@@ -70,27 +70,27 @@ void	testMinMax( void )
 	std::cout << "max (a,b)\t" << Fixed::max(c, d).toFloat() << std::endl;
 }
 
-void	testEx( void )
+void	testEx(void)
 {
 	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	const Fixed b(Fixed(5.05f) * Fixed(2));
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
+	putnlgreen("=== Provided test [a = default, b = 5.05 * 2]");
+	std::cout << "a\t" << a << std::endl;
+	std::cout << "++a\t" << ++a << std::endl;
+	std::cout << "a\t" << a << std::endl;
+	std::cout << "a++\t" << a++ << std::endl;
+	std::cout << "a\t" << a << std::endl;
+	std::cout << "b\t" << b << std::endl;
+	std::cout << "max(a,b)" << Fixed::max( a, b ) << std::endl;
 }
 
-
-int	main( void )
+int	main(void)
 {
 	testEx();
 	testArithmetic();
 	testComparison();
 	testIncrement();
 	testMinMax();
-    return 0;
+	return 0;
 }

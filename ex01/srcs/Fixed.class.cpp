@@ -1,40 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*   Fixed.class.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpetit <fpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 21:36:35 by fpetit            #+#    #+#             */
-/*   Updated: 2025/05/03 19:54:39 by fpetit           ###   ########.fr       */
+/*   Updated: 2025/07/14 20:01:48 by fpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "Fixed.class.hpp"
+
+std::ostream& operator<<(std::ostream& os, const Fixed& obj)
+{
+	os << obj.toFloat();
+	return (os);
+}
 
 void	putnl(std::string msg)
 {
 	std::cout << msg << std::endl;
 }
 
-void	putnlgreen(std::string msg)
+void	putnlcol(std::string col, std::string msg)
 {
-	std::cout << GREEN << msg << NC << std::endl;
+	std::cout << col << msg << NC << std::endl;
 }
 
-Fixed::Fixed( void )
+Fixed::Fixed(void)
 {
-	putnl("Default constructor called");
+	putnl("Default constructor called");	
 	_value = 0;
 }
 
-Fixed::Fixed( const Fixed& obj )
+Fixed::Fixed(const int n)
+{
+	putnl("Int constructor called");
+	_value = n << _right_n;
+}
+
+Fixed::Fixed(const float n)
+{
+	putnl("Float constructor called");
+	_value = roundf(n * (1 << _right_n));
+}
+
+Fixed::Fixed(const Fixed& obj)
 {
 	putnl("Copy constructor called");
 	*this = obj;
 }
 
-Fixed& Fixed::operator=( const Fixed& obj )
+Fixed& Fixed::operator=(const Fixed& obj)
 {
 	putnl("Copy assignment operator called");
 	if (this != &obj)
@@ -44,19 +62,27 @@ Fixed& Fixed::operator=( const Fixed& obj )
 	return (*this);
 }
 
-Fixed::~Fixed( void )
+Fixed::~Fixed(void)
 {
 	putnl("Destructor called");
 }
 
-int     Fixed::getRawBits( void ) const
+int     Fixed::getRawBits(void) const
 {
-	putnl("getRawBits member function called");
 	return (_value);
 }
 
-void    Fixed::setRawBits( int const raw )
+void	Fixed::setRawBits(int const raw)
 {
-	putnl("setRawBits member function called");
 	 _value = raw;
+}
+
+float	Fixed::toFloat(void) const
+{
+	return ((float) _value / (1 << _right_n));
+}
+
+int		Fixed::toInt(void) const
+{
+	return (_value >> _right_n);
 }

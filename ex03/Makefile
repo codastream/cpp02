@@ -58,8 +58,8 @@ BUILD_DIR		:=	.build
 # no duplicates
 
 SRCS_FILES:=	main.cpp\
-				Fixed.cpp\
-				Point.cpp\
+				Fixed.class.cpp\
+				Point.class.cpp\
 				bsp.cpp\
 
 SRCS:=			$(addprefix $(SRC_DIR)/, $(SRCS_FILES))

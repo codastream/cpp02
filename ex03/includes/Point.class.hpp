@@ -6,32 +6,34 @@
 /*   By: fpetit <fpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 16:47:43 by fpetit            #+#    #+#             */
-/*   Updated: 2025/05/06 15:43:09 by fpetit           ###   ########.fr       */
+/*   Updated: 2025/07/14 23:06:32 by fpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POINT_HPP
-# define POINT_HPP
+#ifndef POINT_CLASS_HPP
+# define POINT_CLASS_HPP
 
 #include <string>
-#include "Fixed.hpp"
+#include "Fixed.class.hpp"
 
 class Point
 {
-private:
-	Fixed	_x;
-	Fixed	_y;
+	private:
+		Fixed	_x;
+		Fixed	_y;
 
-public:
+	public:
 
-	Point( void );
-	Point( const float x, const float y );
-	Point( const Point& p );
-	Point& operator= (const Point& p );
-	~Point( void );
-	Fixed	getX( void );
-	Fixed	getY( void );
+		Point(void);
+		Point(const float x, const float y);
+		Point(const Point& p);
 
+		~Point(void);
+
+		Point& operator= (const Point& p );
+
+		Fixed	getX(void);
+		Fixed	getY(void);
 };
 
 bool	bsp(Point const a, Point const b, Point const c, Point const point);
