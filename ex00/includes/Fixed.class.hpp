@@ -6,7 +6,7 @@
 /*   By: fpetit <fpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 00:19:26 by fpetit            #+#    #+#             */
-/*   Updated: 2025/07/14 20:14:36 by fpetit           ###   ########.fr       */
+/*   Updated: 2025/07/26 14:45:30 by fpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@
 # define CYAN		"\033[36m"
 # define WHITE		"\033[37m"
 
-void	putnlgreen(std::string msg);
-void	putnl(std::string msg);
+void	putnlgreen(const std::string msg);
+void	putnlcol(const std::string col, const std::string msg);
+void	putnl(const std::string msg);
 
 class Fixed
 {
@@ -42,7 +43,7 @@ class Fixed
 		Fixed& operator=(const Fixed& inst);
 
 		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
+		void	setRawBits(const int raw);
 };
 
 #endif
