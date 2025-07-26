@@ -6,7 +6,7 @@
 /*   By: fpetit <fpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 13:21:53 by fpetit            #+#    #+#             */
-/*   Updated: 2025/07/14 23:14:25 by fpetit           ###   ########.fr       */
+/*   Updated: 2025/07/26 15:10:57 by fpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,16 @@ void	testEx(void)
 	std::cout << "max(a,b)" << Fixed::max( a, b ) << std::endl;
 }
 
+void	testValue(void)
+{
+	Fixed a;
+	a.setRawBits(0b111000000);
+
+	putnlgreen("=== Provided test [a; a.setRawBits 0b111000000]");
+	std::cout << "a\t" << a << std::endl;
+	std::cout << "++a\t" << ++a << std::endl;
+}
+
 int	main(void)
 {
 	testEx();
@@ -92,5 +102,6 @@ int	main(void)
 	testComparison();
 	testIncrement();
 	testMinMax();
+	testValue();
 	return 0;
 }

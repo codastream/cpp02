@@ -6,7 +6,7 @@
 /*   By: fpetit <fpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 13:21:53 by fpetit            #+#    #+#             */
-/*   Updated: 2025/07/14 23:20:54 by fpetit           ###   ########.fr       */
+/*   Updated: 2025/07/26 15:53:19 by fpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,18 @@ int	main(void)
 	Point	b = Point(0, 5);
 	Point	c = Point(5, 0);
 	Point	out = Point(0, -4);
-	Point	on = Point(0, 0);
+	Point	on = Point(1, 0);
 	Point	in = Point(1, 2);
 
-	std::cout << BLUE << "for a triangle\nB(0,5)\nx\n|\\\n| \\\n|  \\\n|   \\\nx----x\nA(0,0) C(5,0)\n" << NC << std::endl;
+	std::cout << BLUE << "    for a triangle\n\
+    B(0,5)\n\
+    x\n\
+    |\\\n\
+    | \\\n\
+    | "<< GREEN << "๏" << BLUE << "\\\n\
+    |   \\\n"
+<< RED << "๏" << BLUE <<"   x" << RED << "๏" << BLUE << "---x\n\
+    A(0,0) C(5,0)\n" << NC << std::endl;
 
 	check(a, b, c, out);
 	check(a, b, c, on);

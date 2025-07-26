@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.hpp                                          :+:      :+:    :+:   */
+/*   Point.class.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpetit <fpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 16:47:43 by fpetit            #+#    #+#             */
-/*   Updated: 2025/07/14 23:06:32 by fpetit           ###   ########.fr       */
+/*   Updated: 2025/07/26 15:15:24 by fpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Point
 
 		~Point(void);
 
-		Point& operator= (const Point& p );
+		Point& operator= (const Point& p);
 
 		Fixed	getX(void);
 		Fixed	getY(void);

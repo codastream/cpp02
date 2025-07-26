@@ -6,13 +6,13 @@
 /*   By: fpetit <fpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 21:36:35 by fpetit            #+#    #+#             */
-/*   Updated: 2025/07/14 23:03:20 by fpetit           ###   ########.fr       */
+/*   Updated: 2025/07/26 15:17:20 by fpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.class.hpp"
 
-std::ostream& operator<<( std::ostream& os, const Fixed& obj )
+std::ostream& operator<<(std::ostream& os, const Fixed& obj)
 {
 	os << obj.toFloat();
 	return (os);
@@ -33,24 +33,25 @@ Fixed::Fixed(void)
 	_value = 0;
 }
 
-Fixed::Fixed(const int n )
+Fixed::Fixed(const int n)
 {
 	_value = n << _right_n;
 }
 
-Fixed::Fixed(const float n )
+Fixed::Fixed(const float n)
 {
 	_value = roundf(n * (1 << _right_n));
 }
 
-Fixed::Fixed(const Fixed& obj )
+Fixed::Fixed(const Fixed& obj)
 {
 	*this = obj;
 }
 
-Fixed& Fixed::operator=(const Fixed& obj )
+Fixed& Fixed::operator=(const Fixed& obj)
 {
-	_value = obj.getRawBits();
+	if (this != &obj)
+		_value = obj.getRawBits();
 	return (*this);
 }
 

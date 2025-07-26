@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*   Fixed.class.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpetit <fpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 21:36:35 by fpetit            #+#    #+#             */
-/*   Updated: 2025/07/14 23:08:34 by fpetit           ###   ########.fr       */
+/*   Updated: 2025/07/26 15:17:48 by fpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,10 @@ Fixed::Fixed(const Fixed& inst )
 	*this = inst;
 }
 
-Fixed& Fixed::operator=(const Fixed& inst )
+Fixed& Fixed::operator=(const Fixed& inst)
 {
-	_value = inst.getRawBits();
+	if (this != &inst)
+		_value = inst.getRawBits();
 	return (*this);
 }
 
