@@ -6,7 +6,7 @@
 /*   By: fpetit <fpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 21:36:35 by fpetit            #+#    #+#             */
-/*   Updated: 2025/07/14 20:01:48 by fpetit           ###   ########.fr       */
+/*   Updated: 2025/07/29 13:54:12 by fpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,22 +28,19 @@ void	putnlcol(std::string col, std::string msg)
 	std::cout << col << msg << NC << std::endl;
 }
 
-Fixed::Fixed(void)
+Fixed::Fixed(void) : _value(0)
 {
 	putnl("Default constructor called");	
-	_value = 0;
 }
 
-Fixed::Fixed(const int n)
+Fixed::Fixed(const int n) : _value(n << _right_n)
 {
 	putnl("Int constructor called");
-	_value = n << _right_n;
 }
 
-Fixed::Fixed(const float n)
+Fixed::Fixed(const float n) : _value(roundf(n * (1 << _right_n)))
 {
 	putnl("Float constructor called");
-	_value = roundf(n * (1 << _right_n));
 }
 
 Fixed::Fixed(const Fixed& obj)

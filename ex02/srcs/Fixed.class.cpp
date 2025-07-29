@@ -6,7 +6,7 @@
 /*   By: fpetit <fpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 21:36:35 by fpetit            #+#    #+#             */
-/*   Updated: 2025/07/26 15:17:20 by fpetit           ###   ########.fr       */
+/*   Updated: 2025/07/29 13:55:50 by fpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,11 @@ void	putnlgreen(std::string msg)
 	std::cout << GREEN << msg << NC << std::endl;
 }
 
-Fixed::Fixed(void)
-{
-	_value = 0;
-}
+Fixed::Fixed(void) : _value(0) {}
 
-Fixed::Fixed(const int n)
-{
-	_value = n << _right_n;
-}
+Fixed::Fixed(const int n) : _value(n << _right_n) {}
 
-Fixed::Fixed(const float n)
-{
-	_value = roundf(n * (1 << _right_n));
-}
+Fixed::Fixed(const float n) : _value(roundf(n * (1 << _right_n))) {}
 
 Fixed::Fixed(const Fixed& obj)
 {
